@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 About | Multi-Thread Web Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="emoji-header">📚🎓💻</div>
+        <h1>📖 About This Project</h1>
+
+        <div class="card">
+            <h2>🎯 Project Objectives</h2>
+            <p>Develop a multi-threaded web server in Python that processes HTTP requests from browsers or client programs using raw socket programming.</p>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Technical Details</h2>
+            <ul class="feature-list">
+                <li>🐍 Language: Python 3</li>
+                <li>🔌 Socket programming – no high-level HTTP libraries</li>
+                <li>🧵 Threading: one thread per incoming request</li>
+                <li>📁 Document root: <code>./www/</code> folder</li>
+                <li>📝 Logging: records client IP, time, requested file, and status code</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📊 HTTP Status Codes Supported</h2>
+            <ul class="feature-list">
+                <li>✅ 200 OK – successful request</li>
+                <li>⚠️ 400 Bad Request – malformed HTTP request</li>
+                <li>🔒 403 Forbidden – access denied</li>
+                <li>❓ 404 Not Found – file does not exist</li>
+                <li>🔄 304 Not Modified – file unchanged (If-Modified-Since)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Back to Home</h2>
+            <a href="index.html" class="btn">🏠 Return to Homepage</a>
+        </div>
+
+        <div class="footer">
+            📡 Comp 2322 Computer Networking · Project
+        </div>
+    </div>
+</body>
+</html>
