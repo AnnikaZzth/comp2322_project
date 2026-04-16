@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Server Test Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Thread Web Server</h1>
+        <p>Server is running successfully on port 8080</p>
+        
+        <div class="test-section">
+            <h2>✓ GET Request Test</h2>
+            <div class="test-box">
+                <p><strong>Text file (HTML):</strong> This page loads successfully</p>
+                <p><strong>Image file:</strong></p>
+                <button id="loadImageBtn" class="test-btn">Load Image</button>
+                <div id="imageContainer" style="margin-top: 15px;"></div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test Other Features</h2>
+            <table class="feature-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>How to Test</th>
+                    <th>Expected Result</th>
+                </tr>
+                <tr>
+                    <td>HEAD Request</td>
+                    <td><code>curl -I http://127.0.0.1:8080/</code></td>
+                    <td>Returns headers only</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td><a href="/nonexistent.html">Click here</a></td>
+                    <td>404 error page</td>
+                </tr>
+                <tr>
+                    <td>304 Not Modified</td>
+                    <td>Refresh this page</td>
+                    <td>Check server.log for 304</td>
+                </tr>
+                <tr>
+                    <td>403 Forbidden</td>
+                    <td><a href="/../etc/passwd">Click here</a></td>
+                    <td>403 error page</td>
+                </tr>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Use telnet or curl with malformed request</td>
+                    <td>400 error response</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>Server Log: <code>server.log</code> records all requests</p>
+            <p><strong>Status:</strong> <span class="online">● Online</span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loadImageBtn').addEventListener('click', function() {
+            const container = document.getElementById('imageContainer');
+            container.innerHTML = '<img src="photo.jpg" alt="test image" width="200" style="border-radius:5px; border:1px solid #ddd;">';
+        });
+    </script>
+</body>
+</html>
